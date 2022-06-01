@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Match>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table>
+    <tr>
+        <th>Home Team</th>
+        <th>Home Team Score</th>
+        <th>-</th>
+        <th>Away Team Score</th>
+        <th>Away Team </th>
+        <th>Status</th>
+        <th>Tournament</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td align="center">@item.HomeTeam.ShortName</td>
+            <td align="center">@item.HomeTeam.Score.Current</td>
+            <td align="center"></td>
+            <td align="center">@item.AwayTeam.Score.Current</td>
+            <td align="center">@item.AwayTeam.ShortName</td>
+            <td align="center">@item.Status.ShortName</td>
+            <td align="center">@item.Tournament.ShortName</td>
+        </tr>
+    }
+</table>
